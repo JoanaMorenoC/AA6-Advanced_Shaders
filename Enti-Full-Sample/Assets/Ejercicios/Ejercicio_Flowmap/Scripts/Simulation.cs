@@ -3,7 +3,6 @@ using UnityEngine.Serialization;
 
 public class Simulation : MonoBehaviour
 {
-    [Header("Player Position Tracker")]
     public Transform minSimulation;
     public Transform maxSimulation;
     public Transform player;
@@ -18,8 +17,7 @@ public class Simulation : MonoBehaviour
 
     private void Awake()
     {
-        lastFrame = new RenderTexture(renderTexture.width, renderTexture.height, renderTexture.depth);
-
+        lastFrame = new RenderTexture(renderTexture.width, renderTexture.height, renderTexture.depth, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
         instanceMaterial = new Material(simulationMaterial);
         Shader.SetGlobalVector("_MinPosSimulation", minSimulation.position);
         Shader.SetGlobalVector("_MaxPosSimulation", maxSimulation.position);
@@ -29,6 +27,7 @@ public class Simulation : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(lastFrame.sRGB);
         var direction = player.position - lastPosition;
         instanceMaterial.SetVector("_Direction", direction.normalized);
         instanceMaterial.SetVector("_PlayerPosition", player.position);

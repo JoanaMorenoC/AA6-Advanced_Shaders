@@ -50,12 +50,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Metallic: 0
+    - _Metallic: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothness: 0.9
-    - _Speed: 1.03
-    - _Strength: 0.25
+    - _Smoothness: 0.75
+    - _Speed: 0.1
+    - _Strength: 1
     m_Colors:
     - _Tiling: {r: 1.54, g: 1.49, b: 0, a: 0}
     - _WaterColor: {r: 0, g: 0.654902, b: 0.9607844, a: 1}
