@@ -3,6 +3,7 @@ using UnityEngine.Serialization;
 
 public class Simulation : MonoBehaviour
 {
+    [Header("Player Position Tracker")]
     public Transform minSimulation;
     public Transform maxSimulation;
     public Transform player;
